@@ -68,7 +68,7 @@ class _WeatherPageState extends State<WeatherPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[500],
+      backgroundColor: Colors.grey[400],
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           //city name
