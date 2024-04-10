@@ -34,7 +34,30 @@ class _WeatherPageState extends State<WeatherPage> {
       print(e);
     }
   }
+
   //weather animations
+  String getWeatherAnimation(String? mainCondition) {
+    if (mainCondition == null) {
+      return 'assets/Sun.json';
+    } //if there are no conditions
+
+    switch (mainCondition) {
+      case 'Rain':
+        return 'assets/rain.json';
+      case 'Clouds':
+        return 'assets/cloud.json';
+      case 'fog':
+        return 'assets/cloud.json';
+      case 'shower rain':
+        return 'assets/rain.json';
+      case 'thunderstorm':
+        return 'assets/thunder.json';
+      case 'Clear':
+        return 'assets/Sun.json';
+      default:
+        return 'assets/Sun.json';
+    }
+  }
 
   //init state
   void initState() {
@@ -45,15 +68,20 @@ class _WeatherPageState extends State<WeatherPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[500],
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           //city name
           Text(_weather?.CityName ?? 'Loading City...'),
 
           //Adding aminations
-          Lottie.asset('assets/Sun.json'),
+          Lottie.asset(getWeatherAnimation(_weather?.mainCondition ?? "")),
+
           //city temperature
           Text('${_weather?.Temperature.round()}°C'),
+
+          //weather condition
+          Text(_weather?.mainCondition ?? ""),
         ]),
       ),
     );
