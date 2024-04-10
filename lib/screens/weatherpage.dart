@@ -11,7 +11,7 @@ class WeatherPage extends StatefulWidget {
 
 class _WeatherPageState extends State<WeatherPage> {
   //api key
-  final _weatherService = WeatherService('ADD API KEY HERE PRAKHAR');
+  final _weatherService = WeatherService('1753fd6fe8661dd0a10af732a64b571b');
   Weather? _weather;
 
   //fetch weather data
@@ -45,8 +45,7 @@ class _WeatherPageState extends State<WeatherPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, 
-        children: [
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           //city name
           Text(_weather?.CityName ?? 'Loading City...'),
 
