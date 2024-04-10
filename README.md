@@ -12,7 +12,8 @@ This Flutter Weather App provides real-time weather information using the OpenWe
 - 7-day weather forecast.
 - Clean and intuitive UI.
 
-## Screenshots
+## Screenshot
+<img src="https://github.com/iPrakharV/Flutter-Weather_App/blob/main/screenshot/display.png" width="300" height="600">
 
 
 ## Getting Started
